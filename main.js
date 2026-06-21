@@ -591,47 +591,4 @@
         });
     }
 
-    // --- Contact Form Submission (FormSubmit Integration) ---
-    const contactForm = document.getElementById('contact-form');
-    const contactSuccess = document.getElementById('contact-success');
-
-    if (contactForm && contactSuccess) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'SENDING...';
-            submitBtn.disabled = true;
-
-            const formData = new FormData(contactForm);
-
-            fetch('https://formsubmit.co/ajax/fitforlifegym2020@gmail.com', {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(Object.fromEntries(formData))
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Fade form and show success message
-                    contactForm.style.opacity = '0.3';
-                    contactForm.style.pointerEvents = 'none';
-                    contactSuccess.classList.remove('hidden');
-                } else {
-                    alert('Submission failed. Please try again or email us directly.');
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }
-            })
-            .catch(error => {
-                console.error('Error submitting form:', error);
-                alert('An error occurred. Please check your connection and try again.');
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
-        });
-    }
 })();
