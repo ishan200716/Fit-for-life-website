@@ -335,16 +335,20 @@
                     <div class="divider"></div>
                     <div class="contact-form-center">
                         <form id="contact-form" class="contact-form">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_subject" value="New Gym Membership Enquiry!">
+                            <input type="hidden" name="_captcha" value="false">
+
                             <div class="input-group">
-                                <input type="text" id="contact-name" required>
+                                <input type="text" id="contact-name" name="name" required>
                                 <label for="contact-name">Full Name</label>
                             </div>
                             <div class="input-group">
-                                <input type="email" id="contact-email" required>
+                                <input type="email" id="contact-email" name="email" required>
                                 <label for="contact-email">Email Address</label>
                             </div>
                             <div class="input-group">
-                                <textarea id="contact-message" required></textarea>
+                                <textarea id="contact-message" name="message" required></textarea>
                                 <label for="contact-message">Message / Plan of Interest</label>
                             </div>
                             <button type="submit" class="btn-cta primary-cta">SEND MESSAGE</button>
@@ -363,13 +367,6 @@
                         <a href="#" class="logo">FIT<span class="orange-accent">FOR</span>LIFE</a>
                         <p>A premium athletic facility in Dharmatala, Serampore dedicated to unlocking human performance
                             and strength potential.</p>
-                    </div>
-                    <div class="footer-newsletter">
-                        <h4>NEWSLETTER SIGNUP</h4>
-                        <form id="newsletter-form" class="newsletter-form">
-                            <input type="email" placeholder="Your Email Address" required>
-                            <button type="submit" class="btn-cta inline-btn">SUBSCRIBE</button>
-                        </form>
                     </div>
                 </div>
                 <div class="footer-bottom">
