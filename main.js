@@ -417,6 +417,15 @@
         const overlayContainer = document.getElementById('text-overlay-container');
         if (!overlayContainer) return;
 
+        // Dynamic fade out for scroll down prompt
+        const scrollHint = document.getElementById('scroll-hint');
+        if (scrollHint) {
+            const hintOpacity = Math.max(0, 1 - (scrollTop / 150));
+            scrollHint.style.opacity = hintOpacity.toFixed(3);
+            scrollHint.style.transform = `translate(-50%, ${(1 - hintOpacity) * 15}px)`;
+            scrollHint.style.visibility = hintOpacity > 0.01 ? 'visible' : 'hidden';
+        }
+
         // Hide overlay container completely once scrolled past the spacer
         if (scrollTop >= scrollytellingRange) {
             overlayContainer.style.opacity = '0';
