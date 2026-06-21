@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FIT FOR LIFE | Feel The Burn</title>
+    <meta name="description"
+        content="Fit For Life Gym - The premier fitness center in Dharmatala, Serampore. High-end equipment, professional trainers, and customized training programs.">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Premium Header Navigation -->
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="#" class="logo">FIT<span class="orange-accent">FOR</span>LIFE</a>
+            <nav class="nav-links">
+                <a href="#programs">Programs</a>
+                <a href="#pricing">Memberships</a>
+                <a href="#trainers">Trainers</a>
+                <a href="#bmi">BMI Calculator</a>
+                <a href="#location">Location</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="#contact" class="btn-cta nav-cta">JOIN NOW</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Canvas Layer (Background) -->
+    <div id="canvas-container" aria-hidden="true">
+        <canvas id="bg-canvas"></canvas>
+    </div>
+
+    <!-- Floating Text Overlays (Cinematic Scrollytelling Texts) -->
+    <div id="text-overlay-container" aria-hidden="true">
+        <div class="scroll-text-overlay" id="overlay-1">
+            <h1 class="glow-text">REDEFINE YOUR LIMITS</h1>
+            <p>The journey to peak physical condition starts here.</p>
+        </div>
+        <div class="scroll-text-overlay" id="overlay-2">
+            <h1 class="glow-text">FUEL THE FIRE</h1>
+            <p>Every rep, every drop of sweat, builds the new you.</p>
+        </div>
+    </div>
+
+    <!-- Interface Layer (Foreground / Scroll Wrapper) -->
+    <div id="scroll-wrapper">
+        <div id="scroll-height"></div>
+
+        <!-- Gym Content Sections (Slides up over the canvas) -->
+        <div id="gym-content">
+            <!-- Programs Section -->
+            <section id="programs" class="gym-section">
+                <div class="section-container">
+                    <span class="section-subtitle">OUR PROGRAMS</span>
+                    <h2 class="section-title">BUILD YOUR LEGACY</h2>
+                    <div class="divider"></div>
+                    <div class="programs-grid">
+                        <div class="program-card">
+                            <div class="program-icon">💪</div>
+                            <h3>Strength & Conditioning</h3>
+                            <p>Build raw power, dense muscle mass, and robust joints with our athlete-curated
+                                hypertrophy and Olympic lifting tracks.</p>
+                            <span class="program-tag">Strength Focus</span>
+                        </div>
+                        <div class="program-card">
+                            <div class="program-icon">🔥</div>
+                            <h3>High-Intensity Cardio</h3>
+                            <p>Torch body fat and optimize cardiovascular endurance with explosive high-intensity
+                                circuits and athletic conditioning.</p>
+                            <span class="program-tag">Fat Burn</span>
+                        </div>
+
+                        <div class="program-card">
+                            <div class="program-icon">🎯</div>
+                            <h3>Elite Personal Coaching</h3>
+                            <p>Get a completely personalized roadmap with one-on-one sessions, biomechanic assessments,
+                                and custom macros.</p>
+                            <span class="program-tag">1-On-1</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing/Memberships Section -->
+            <section id="pricing" class="gym-section alt-bg">
+                <div class="section-container">
+                    <span class="section-subtitle">MEMBERSHIPS</span>
+                    <h2 class="section-title">CHOOSE YOUR PATH</h2>
+                    <div class="divider"></div>
+
+                    <div class="pricing-grid">
+                        <!-- Basic Plan -->
+                        <div class="pricing-card">
+                            <div class="plan-header">
+                                <h3>BASIC</h3>
+                                <div class="plan-price">
+                                    <span class="currency">₹</span>
+                                    <span class="price-val">1,600</span>
+                                    <span class="period">/ Total</span>
+                                </div>
+                                <div class="plan-duration">1 Month Membership</div>
+                                <div class="plan-breakdown">₹1,000 Admission + ₹600/mo</div>
+                            </div>
+                            <ul class="plan-features">
+                                <li>1 Month full facility access</li>
+                                <li>Gym & weights access</li>
+                                <li class="disabled">No admission fee discount</li>
+                                <li class="disabled">No discounted monthly rate (₹500/mo)</li>
+                            </ul>
+                        </div>
+                        <!-- Silver Plan -->
+                        <div class="pricing-card">
+                            <div class="plan-header">
+                                <h3>SILVER</h3>
+                                <div class="plan-price">
+                                    <span class="currency">₹</span>
+                                    <span class="price-val">2,500</span>
+                                    <span class="period">/ Total</span>
+                                </div>
+                                <div class="plan-duration">3 Months Membership</div>
+                                <div class="plan-breakdown">₹700 Admission + ₹600/mo</div>
+                            </div>
+                            <ul class="plan-features">
+                                <li>3 Months full facility access</li>
+                                <li>Gym & weights access</li>
+                                <li>Save ₹300 on Admission Fee</li>
+                                <li class="disabled">No discounted monthly rate (₹500/mo)</li>
+                            </ul>
+                        </div>
+                        <!-- Gold Plan (Best Value / Glowing) -->
+                        <div class="pricing-card popular">
+                            <div class="popular-tag">BEST VALUE</div>
+                            <div class="plan-header">
+                                <h3>GOLD</h3>
+                                <div class="plan-price">
+                                    <span class="currency">₹</span>
+                                    <span class="price-val">3,600</span>
+                                    <span class="period">/ Total</span>
+                                </div>
+                                <div class="plan-duration">6 Months Membership</div>
+                                <div class="plan-breakdown">₹0 Admission + ₹600/mo</div>
+
+                            </div>
+                            <ul class="plan-features">
+                                <li>6 Months full facility access</li>
+                                <li>Gym & weights access</li>
+                                <li>₹0 Admission Fee (Save ₹1,000!)</li>
+                                <li class="disabled">No discounted monthly rate (₹500/mo)</li>
+
+                            </ul>
+                        </div>
+                        <!-- Platinum Plan -->
+                        <div class="pricing-card">
+                            <div class="plan-header">
+                                <h3>PLATINUM</h3>
+                                <div class="plan-price">
+                                    <span class="currency">₹</span>
+                                    <span class="price-val">6,000</span>
+                                    <span class="period">/ Total</span>
+                                </div>
+                                <div class="plan-duration">12 Months Membership</div>
+                                <div class="plan-breakdown">₹0 Admission + ₹500/mo</div>
+                            </div>
+                            <ul class="plan-features">
+                                <li>12 Months full facility access</li>
+                                <li>Gym & weights access</li>
+                                <li>₹0 Admission Fee (Save ₹1,000!)</li>
+                                <li>Discounted monthly rate (₹500/mo)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trainers Section -->
+            <section id="trainers" class="gym-section">
+                <div class="section-container">
+                    <span class="section-subtitle">THE ELITE TEAM</span>
+                    <h2 class="section-title">EXPERT INSTRUCTORS</h2>
+                    <div class="divider"></div>
+                    <div class="trainers-grid">
+                        <div class="trainer-card">
+                            <div class="trainer-img-wrapper">
+                                <img src="images/trainer1.png" alt="Prasanna Methur" class="trainer-img">
+                            </div>
+                            <div class="trainer-info">
+                                <h3>Prasanna Methur</h3>
+                                <span class="trainer-role">Never Give Up</span>
+                                <p>Years of experience in coaching athletes and bodybuilders. Specializes in cardio
+                                    and weight training.</p>
+                                <div class="trainer-socials">
+                                    <a href="https://www.instagram.com/prasannamethur/" target="_blank"
+                                        aria-label="Instagram">IG</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trainer-card">
+                            <div class="trainer-img-wrapper">
+                                <img src="images/trainer2.png" alt="Sohan Karmakar" class="trainer-img">
+                            </div>
+                            <div class="trainer-info">
+                                <h3>Sohan Karmakar</h3>
+                                <span class="trainer-role">Trust The Process</span>
+                                <p>Fitness coach and track athlete. Passionate about yoga,metabolic conditioning,
+                                    high-intensity workouts, and fat loss.</p>
+                                <div class="trainer-socials">
+                                    <a href="https://www.instagram.com/imsohankarmakar/" target="_blank"
+                                        aria-label="Instagram">IG</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BMI Calculator Section -->
+            <section id="bmi" class="gym-section alt-bg">
+                <div class="section-container">
+                    <span class="section-subtitle">METRICS</span>
+                    <h2 class="section-title">BMI CALCULATOR</h2>
+                    <div class="divider"></div>
+                    <div class="bmi-wrapper">
+                        <div class="bmi-form-side">
+                            <p class="bmi-desc">Body Mass Index (BMI) is a useful measure of key health indicators. Find
+                                yours below to see our personalized training recommendations.</p>
+                            <form id="bmi-form" class="bmi-form">
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <input type="number" id="bmi-weight" required min="10" max="300">
+                                        <label for="bmi-weight">Weight (kg)</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="number" id="bmi-height" required min="50" max="250">
+                                        <label for="bmi-height">Height (cm)</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-cta primary-cta">CALCULATE NOW</button>
+                            </form>
+                        </div>
+                        <div class="bmi-result-side">
+                            <div class="result-placeholder" id="bmi-placeholder">
+                                <div class="calc-icon">🧮</div>
+                                <p>Enter your height and weight to view your personalized results & program suggestions.
+                                </p>
+                            </div>
+                            <div class="result-display hidden" id="bmi-result-display">
+                                <div class="score-container">
+                                    <span class="score-label">YOUR SCORE</span>
+                                    <span class="score-value" id="bmi-value">22.4</span>
+                                </div>
+                                <div class="status-indicator">
+                                    <div class="status-bar-bg">
+                                        <div class="status-bar-fill" id="bmi-bar"></div>
+                                    </div>
+                                    <div class="status-labels">
+                                        <span id="bmi-status">Normal Weight</span>
+                                    </div>
+                                </div>
+                                <div class="recommendation-box">
+                                    <h4>RECOMMENDED WORKOUT:</h4>
+                                    <p id="bmi-recommendation">We recommend our Strength & Conditioning program to build
+                                        lean muscle mass and enhance overall body composition.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Location Section -->
+            <section id="location" class="gym-section alt-bg">
+                <div class="section-container">
+                    <span class="section-subtitle">FIND US</span>
+                    <h2 class="section-title">OUR LOCATION</h2>
+                    <div class="divider"></div>
+                    <div class="location-wrapper">
+                        <div class="location-info-side">
+                            <div class="info-block">
+                                <h4>LOCATION</h4>
+                                <p>Rishi Bankim Sarani,<br>Dharmatala, Serampore, West Bengal 712201, Queen's Choice
+                                    Apartment, near Smart Bazaar</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>HOURS</h4>
+                                <p>Monday – Saturday: 6:30 AM – 12:00 Noon<br>4:30 PM – 9:30 PM (Sunday Closed)</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>CONTACT</h4>
+                                <p>Phone: +91 70031 49617<br>Email: fitforlifegym2020@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="location-map-side">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Fit%20For%20Life%20Gym%20Serampore&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                width="100%" height="350"
+                                style="border:0; border-radius: 8px; filter: grayscale(100%) invert(90%) contrast(90%);"
+                                allowfullscreen="" loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="gym-section">
+                <div class="section-container">
+                    <span class="section-subtitle">GET IN TOUCH</span>
+                    <h2 class="section-title">JOIN THE CLUB</h2>
+                    <div class="divider"></div>
+                    <div class="contact-form-center">
+                        <form id="contact-form" class="contact-form">
+                            <div class="input-group">
+                                <input type="text" id="contact-name" required>
+                                <label for="contact-name">Full Name</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="contact-email" required>
+                                <label for="contact-email">Email Address</label>
+                            </div>
+                            <div class="input-group">
+                                <textarea id="contact-message" required></textarea>
+                                <label for="contact-message">Message / Plan of Interest</label>
+                            </div>
+                            <button type="submit" class="btn-cta primary-cta">SEND MESSAGE</button>
+                        </form>
+                        <div id="contact-success" class="contact-success-msg hidden">
+                            <span>✓</span> Thank you! We'll contact you within 24 hours.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="gym-footer">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="#" class="logo">FIT<span class="orange-accent">FOR</span>LIFE</a>
+                        <p>A premium athletic facility in Dharmatala, Serampore dedicated to unlocking human performance
+                            and strength potential.</p>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4>NEWSLETTER SIGNUP</h4>
+                        <form id="newsletter-form" class="newsletter-form">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn-cta inline-btn">SUBSCRIBE</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 FIT FOR LIFE. All rights reserved. Designed for elite results.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Premium Cinematic Loading Overlay -->
+    <div id="loader-screen" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="loader-content">
+            <div class="loader-spinner-container">
+                <div class="loader-spinner"></div>
+                <div class="loader-spinner-inner"></div>
+            </div>
+            <div class="loader-title">INITIALIZING</div>
+            <div class="loader-sub">PREPARING CINEMATIC EXPERIENCE</div>
+            <div class="loader-progress">0%</div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
